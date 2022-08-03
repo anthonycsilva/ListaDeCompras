@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Card from "./Card";
-import "./UsingReactQueryComponent.css";
+import "./Compras.css";
 import Button from "react-bootstrap/Button";
 import { useQuery } from "@tanstack/react-query";
+import HeaderMenu from "../Header/Header";
 
 const MovieData = (props) => {
   const [compras, setCompras] = useState([]);
@@ -23,7 +24,7 @@ const MovieData = (props) => {
   };
 
   return (
-    <div>
+    <HeaderMenu>
       <div className="Button-Loader">
         <Button className="primary" onClick={recuperarComprasHandler}>
           Load All Data...
@@ -34,7 +35,7 @@ const MovieData = (props) => {
           <Card character={character} key={index} />
         ))}
       </div>
-    </div>
+    </HeaderMenu>
   );
 };
 
