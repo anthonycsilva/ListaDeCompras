@@ -2,6 +2,7 @@
 using ListaDeCompras.Business.Interfaces.ServicesInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ListaDeCompras.API.Controllers
@@ -31,6 +32,13 @@ namespace ListaDeCompras.API.Controllers
         public async Task<Compra> RecuperarCompraPorId(int id)
         {
             var result = await _CompraService.BuscarCompraPorId(id);
+            return result;
+        }
+
+        [HttpGet("/compras")]
+        public async Task<List<Compra>> RecuperarCompras()
+        {
+            var result = await _CompraService.BuscarTodasAsCompras();
             return result;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using ListaDeCompras.Business.Entities;
 using ListaDeCompras.Business.Interfaces.RepositoriesInterfaces;
 using ListaDeCompras.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,10 @@ namespace ListaDeCompras.Infra.Data.Repositories
             return result;
         }
 
-        public Task<List<Compra>> BuscarTodasAsCompras()
+        public async Task<List<Compra>> BuscarTodasAsCompras()
         {
-            throw new NotImplementedException();
+            var result = await _dataContext.Compras.ToListAsync();
+            return result;
         }
 
         public async Task<Compra> CadastrarCompra(Compra compra)

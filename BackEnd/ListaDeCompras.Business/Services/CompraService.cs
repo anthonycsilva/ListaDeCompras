@@ -24,9 +24,10 @@ namespace ListaDeCompras.Business.Services
             return result;
         }
 
-        public Task<List<Compra>> BuscarTodasAsCompras()
+        public async Task<List<Compra>> BuscarTodasAsCompras()
         {
-            throw new NotImplementedException();
+            var result = await _compraRepository.BuscarTodasAsCompras();
+            return result;
         }
 
         public async Task<Compra> CadastrarCompra(Compra compra)
