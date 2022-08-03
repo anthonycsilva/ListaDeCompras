@@ -5,31 +5,32 @@ import Button from "react-bootstrap/Button";
 import { useQuery } from "@tanstack/react-query";
 
 const MovieData = (props) => {
-  const [characters, setCharacters] = useState([]);
+  const [compras, setCompras] = useState([]);
   const fetchData = () =>
-    fetch("https://rickandmortyapi.com/api/character").then((response) =>
+    fetch("https://localhost:44309/compras").then((response) =>
       response.json()
     );
-  const { status, data, error } = useQuery(["rickMortyData"], fetchData);
+  const { status, data, error } = useQuery(["compras"], fetchData);
   if (status === "loading") {
     return <h1>Loading...</h1>;
   }
   if (status === "error") {
     return <h1>Error!: {error.message}</h1>;
   }
-  const fetchRickMortyDataHanlder = () => {
-    setCharacters(data.results);
+  const recuperarComprasHandler = () => {
+    console.log(data);
+    setCompras(data);
   };
 
   return (
     <div>
       <div className="Button-Loader">
-        <Button className="primary" onClick={fetchRickMortyDataHanlder}>
+        <Button className="primary" onClick={recuperarComprasHandler}>
           Load All Data...
         </Button>
       </div>
       <div className="Cards">
-        {characters.map((character, index) => (
+        {compras.map((character, index) => (
           <Card character={character} key={index} />
         ))}
       </div>

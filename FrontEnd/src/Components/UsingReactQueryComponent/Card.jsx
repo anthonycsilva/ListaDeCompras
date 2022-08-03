@@ -1,12 +1,20 @@
 import "./Card.css";
 
 const Card = (props) => {
+  const dataCompradaStr = props.character.dataQuandoFoiComprada;
+  const dataComprada = new Date(dataCompradaStr);
   return (
     <div className="Card">
-      <img src={props.character.image} alt=""></img>
-      <p>Name: {props.character.name}</p>
-      <p>Status: {props.character.status}</p>
-      <p>Gender: {props.character.gender}</p>
+      <p>Nome: {props.character.nome}</p>
+      <p>Valor: {props.character.valor}</p>
+      <p>
+        Data:{" "}
+        {dataComprada.getDay().toString() +
+          "/" +
+          dataComprada.getMonth().toString() +
+          "/" +
+          dataComprada.getFullYear().toString()}
+      </p>
     </div>
   );
 };
