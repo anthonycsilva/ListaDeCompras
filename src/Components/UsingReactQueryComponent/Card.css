@@ -1,0 +1,19 @@
+.Card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #ff7f50;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #ff7f50;
+  margin: 5%;
+  transition: ease-out 0.2s;
+  min-width: 300px;
+}
+
+.Card:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+  overflow: auto;
+}
