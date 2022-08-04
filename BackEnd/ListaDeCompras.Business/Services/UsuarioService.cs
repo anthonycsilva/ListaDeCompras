@@ -11,6 +11,8 @@ using System.Security.Cryptography;
 using ListaDeCompras.Business.Interfaces.RepositoriesInterfaces;
 using AutoMapper;
 using ListaDeCompras.Business.ViewModels.Usuario.Response;
+using ListaDeCompras.Business.ViewModels.UsuarioAccount.Request;
+using ListaDeCompras.Business.ViewModels.UsuarioAccount.Response;
 
 namespace ListaDeCompras.Business.Services
 {
@@ -45,10 +47,21 @@ namespace ListaDeCompras.Business.Services
             return response;
         }
 
-        public Task<bool> RealizarLogin(UsuarioDadosRequest viewModel)
+        public async Task<UsuarioAccountResponse> RealizarLogin(UsuarioAccountRequest viewModel)
         {
-            throw new NotImplementedException();
+            Usuario usuario = new Usuario();
+            usuario.Login = viewModel.Login;
+            usuario.Password = viewModel.Password;
+            var result = await _usuarioRepository.RealizarLogin(usuario);
+            if (result == null)
+                throw new Exception("Usuario Nao encontrado!");
+            UsuarioAccountResponse usuarioResponse = new UsuarioAccountResponse();
+            usuarioResponse.Login = result.Login;
+            usuarioResponse.Password = result.Password;
+            usuarioResponse.Token = TokenServices.GenerateToken(usuario);
+            return usuarioResponse;
         }
+
 
         public async Task<List<UsuarioDadosResponse>> RecuperarUsuarios()
         {

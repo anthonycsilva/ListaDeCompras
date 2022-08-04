@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ListaDeCompras.Business.ViewModels.UsuarioAccount.Response
 {
-    internal class UsuarioAccountResponse
+    public class UsuarioAccountResponse
     {
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Token { get; set; }
     }
 }

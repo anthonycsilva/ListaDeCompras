@@ -20,7 +20,6 @@ namespace ListaDeCompras.Infra.Data.Context
 
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<UsuarioAccount> UsuarioAccounts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
