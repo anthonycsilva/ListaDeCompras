@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
-import UsingReactQueryComponent from "./Components/UsingReactQueryComponent/UsingReactQueryComponent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Compras from "./Components/Compras/Compras";
 function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
       <div className="Main">
-        <UsingReactQueryComponent />
+        <Compras />
       </div>
     </QueryClientProvider>
   );
