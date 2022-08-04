@@ -36,6 +36,12 @@ namespace ListaDeCompras.Infra.Data.Repositories
             }
         }
 
+        public async Task<Usuario> RealizarLogin(Usuario usuario)
+        {
+            var result = await _dataContext.Usuarios.FirstOrDefaultAsync(u => u.Login == usuario.Login && u.Password == usuario.Password);
+            return result;
+        }
+
         public Task<Usuario> RecuperarUsuarioPorId(int id)
         {
             throw new NotImplementedException();

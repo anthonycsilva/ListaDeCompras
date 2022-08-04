@@ -14,6 +14,6 @@ namespace ListaDeCompras.Business.Interfaces.RepositoriesInterfaces
         Task<Usuario> CadastrarUsuario(Usuario usuario);
         Task<List<Usuario>> RecuperarUsuarios();
         Task<Usuario> RecuperarUsuarioPorId(int id);
-
+        Task<Usuario> RealizarLogin(Usuario usuario);
     }
 }

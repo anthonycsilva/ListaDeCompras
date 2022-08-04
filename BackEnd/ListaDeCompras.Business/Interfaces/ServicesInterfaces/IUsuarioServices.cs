@@ -1,6 +1,8 @@
 ﻿using ListaDeCompras.Business.Entities;
 using ListaDeCompras.Business.ViewModels.Request.Usuario;
-using ListaDeCompras.Business.ViewModels.Response.Usuario;
+using ListaDeCompras.Business.ViewModels.Usuario.Response;
+using ListaDeCompras.Business.ViewModels.UsuarioAccount.Request;
+using ListaDeCompras.Business.ViewModels.UsuarioAccount.Response;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace ListaDeCompras.Business.Interfaces.ServicesInterfaces
     {
         Task<List<UsuarioDadosResponse>> RecuperarUsuarios();
         Task<UsuarioDadosResponse> CadastrarUsuario(UsuarioDadosRequest viewModel);
-        Task<bool> RealizarLogin(UsuarioDadosRequest viewModel);
+        Task<UsuarioAccountResponse> RealizarLogin(UsuarioAccountRequest viewModel);
         Task<UsuarioDadosResponse> BuscarUsuarioPorId(int id);
 
 

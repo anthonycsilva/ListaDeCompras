@@ -1,5 +1,6 @@
 ﻿using ListaDeCompras.Business.Entities;
 using ListaDeCompras.Business.Interfaces.ServicesInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 namespace ListaDeCompras.API.Controllers
 {
         [ApiController]
-        [Route("[controller]")]
+        [Route("compras")]
+
 
     public class CompraController : ControllerBase
     {
@@ -22,6 +24,7 @@ namespace ListaDeCompras.API.Controllers
         }
 
         [HttpPost("nova-compra")]
+        [Authorize]
         public async Task<Compra> CadastrarNovaCompra([FromBody]Compra compra)
         {
             var result = await _CompraService.CadastrarCompra(compra);
@@ -29,13 +32,15 @@ namespace ListaDeCompras.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<Compra> RecuperarCompraPorId(int id)
         {
             var result = await _CompraService.BuscarCompraPorId(id);
             return result;
         }
 
-        [HttpGet("/compras")]
+        [HttpGet("obter-compras")]
+        [Authorize]
         public async Task<List<Compra>> RecuperarCompras()
         {
             var result = await _CompraService.BuscarTodasAsCompras();
