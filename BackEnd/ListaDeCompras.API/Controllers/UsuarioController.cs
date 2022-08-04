@@ -20,6 +20,7 @@ namespace ListaDeCompras.API.Controllers
 
         [HttpGet]
         [Route("obter-usuarios")]
+        [Authorize]
         public async Task<IActionResult> RecuperarUsuarios()
         {
             if (!ModelState.IsValid)
