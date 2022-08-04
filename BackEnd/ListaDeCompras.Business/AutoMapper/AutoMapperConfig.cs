@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using ListaDeCompras.Business.Entities;
 using ListaDeCompras.Business.ViewModels.Request.Usuario;
-using ListaDeCompras.Business.ViewModels.Response.Usuario;
+using ListaDeCompras.Business.ViewModels.Usuario.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;

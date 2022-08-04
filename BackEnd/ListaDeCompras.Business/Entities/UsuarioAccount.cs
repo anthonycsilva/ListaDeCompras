@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace ListaDeCompras.Business.Entities
 {
-    public class Auth
+    public class UsuarioAccount
     {
         [Key]
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        [Required]
         public Usuario Usuario { get; set; }
     }
 }

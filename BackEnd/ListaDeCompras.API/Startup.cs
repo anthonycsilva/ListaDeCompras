@@ -44,9 +44,9 @@ namespace ListaDeCompras.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ListaDeCompras.API", Version = "v1" });
             });
 
+            services.AddScoped<DataContext, DataContext>();
             services.AddScoped<ICompraService, CompraService>();
             services.AddScoped<ICompraRepository, CompraRepository>();
-            services.AddScoped<DataContext, DataContext>();
             services.AddScoped<IUsuarioServices, UsuarioService>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }

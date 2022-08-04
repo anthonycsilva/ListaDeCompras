@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using ListaDeCompras.Business.Interfaces.RepositoriesInterfaces;
 using AutoMapper;
-using ListaDeCompras.Business.ViewModels.Response.Usuario;
+using ListaDeCompras.Business.ViewModels.Usuario.Response;
 
 namespace ListaDeCompras.Business.Services
 {

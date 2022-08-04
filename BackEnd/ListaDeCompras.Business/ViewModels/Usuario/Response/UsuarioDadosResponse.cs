@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListaDeCompras.Business.ViewModels.Response.Usuario
+namespace ListaDeCompras.Business.ViewModels.Usuario.Response
 {
     public class UsuarioDadosResponse
     {
