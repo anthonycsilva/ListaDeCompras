@@ -24,7 +24,7 @@ const MovieData = (props) => {
   };
 
   return (
-    <HeaderMenu>
+    <div>
       <div className="Button-Loader">
         <Button className="primary" onClick={recuperarComprasHandler}>
           Load All Data...
@@ -35,7 +35,7 @@ const MovieData = (props) => {
           <Card character={character} key={index} />
         ))}
       </div>
-    </HeaderMenu>
+    </div>
   );
 };
 
